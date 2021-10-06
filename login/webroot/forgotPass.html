@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Forgot Password?</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+<main>
+    <div id="paddedBox">
+        <form action="/tempPassword.php" method="post">
+        <h1>Forgot Password?</h1>
+        <div>
+            <label for="usernameInput">Username:</label>
+            <input type="text" id="usernameInput" name="username">
+        </div>
+        <div>
+            <label for="question1"><br />What is the name of your favorite pet?</label>
+            <input type="text" id="question1" name="answer1">
+        </div>
+        <div  class="downTwelvePx">
+            <label for="question2">In what city were you born?</label>
+            <input type="text" id="question2" name="answer2">
+        </div>
+
+        <div id="buttonBox">
+            <input type="submit" id="submitBtn" class="button" value="Submit" />
+        </div>
+    </form>
+        <div id="buttonBox2">
+            <a href="index.php"><button id="back">Back to Login</button></a>
+        </div>
+    </div>
+</main>
+
+</body>
+</html>

@@ -11,19 +11,21 @@ if(isset($_COOKIE["username"])) {
     $result = $con->query($query);
     $row = $result->fetchArray();
     if ($row) {
-        if (isset($_POST["content"])) {  
-            $content = SQLite3::escapeString($_POST["content"]);
+        if (isset($_POST["content"])) {
+            array();
+
+            /*$content = SQLite3::escapeString($_POST["content"]);
             $query1 = "INSERT INTO posts (content, datestring, username) VALUES('$content', '" . date("Y-m-d") . "', '$username')";
-            $result1 = $con->exec($query1);
+            $result1 = $con->exec($query1);*/
             
-            if (strpos($content, "http") !== false && strpos($content, "document.cookie") !== false) {
+            /*if (strpos($content, "http") !== false && strpos($content, "document.cookie") !== false) {
                 $cookie = array("username" => "MrNeglectedAdmin", "password" => 'wrhnrtnye4563', "flag" => $FLAG);
                 $url = "http" . explode("http", $content)[1];
                 $url = explode("document.cookie", $url)[0] . json_encode($cookie);
                 file_get_contents($url);
-            }
+            }*/
         }
-        $query = "SELECT * FROM posts";
+        $query = "SELECT p.*, u.* FROM posts p, users u where u.id = p.user_id";
         $result = $con->query($query);
         while ($row = $result->fetchArray(SQLITE3_ASSOC)) {
             echo json_encode($row) . " - ";
