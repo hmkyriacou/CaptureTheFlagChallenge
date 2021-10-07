@@ -10,7 +10,7 @@ a {
 }
 
 
-button {
+button, .button {
     background-color: #254AFB;
     border: none;
     color: white;

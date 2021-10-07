@@ -19,9 +19,9 @@ class Problem(PHPApp):
         c.execute("""INSERT INTO users VALUES ('MrNeglectedAdmin', 'wrhnrtnye4563', 1, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEK5ST6yEIb8yQYeFWCVb6XnbpODs_BBscuA&usqp=CAU')""")
         c.execute("""INSERT INTO users VALUES ('UnhelpfulIndividual', 'sdgsdgfsdfg', 1, 'http://clipart-library.com/images/zcX5yqAgi.jpg')""")
 
-        c.execute("CREATE TABLE posts (content text, datestring text, username text);")
-        c.execute("""INSERT INTO posts VALUES ("This is a test", '2021-10-01', 'MrNeglectedAdmin')""")
-        c.execute("""INSERT INTO posts VALUES ("This is another test", '2021-10-01', 'UnhelpfulIndividual')""")
+        #c.execute("CREATE TABLE posts (content text, datestring text, username text);")
+        #c.execute("""INSERT INTO posts VALUES ("This is a test", '2021-10-01', 'MrNeglectedAdmin')""")
+        #c.execute("""INSERT INTO posts VALUES ("This is another test", '2021-10-01', 'UnhelpfulIndividual')""")
 
         conn.commit()
         conn.close()

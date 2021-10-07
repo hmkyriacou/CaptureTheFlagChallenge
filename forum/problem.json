@@ -2,7 +2,7 @@
     "name": "Forum Challenge",
     "category": "Web Exploitation",
     "pkg_dependencies": ["php7.2-sqlite3"],
-    "description": "There is a forum running at http://{{server}}/problem/{{port}}/index.html. Login with the credentials from the last challenge and get the flag the users are talking about!",
+    "description": "There is a forum running at http://{{server}}/problem/{{port}}/index.php. Login with the credentials from the last challenge and get the flag the users are talking about!",
     "score" : 40,
     "hints": [],
     "author": "Freddy, Noah, Harrison",

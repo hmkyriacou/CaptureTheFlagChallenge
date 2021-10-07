@@ -12,8 +12,8 @@ if(isset($_POST["username"])) {
         setcookie("username", $username, time() + (86400 * 30), "/");
         setcookie("password", $password, time() + (86400 * 30), "/");
         setcookie("picture", $row["picture"], time() + (86400 * 30), "/");
-        setcookie("flag", $username == "ndoe" ? "NotTheFlagYouWant" : $FLAG, time() + (86400 * 30), "/");
-        header("Location: forum.php");
+        setcookie("flag", $username == "hubert423" ? "NotTheFlagYouWant" : $FLAG, time() + (86400 * 30), "/");
+        header("Location: blogHome.php");
     } else header("Location: index.php?error=1");
 } else header("Location: index.php?error=1");
 ?>

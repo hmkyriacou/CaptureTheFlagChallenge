@@ -1,16 +1,28 @@
+<?php
+include "config.php";
+$con = new SQLite3($database_file);
+
+if(isset($_COOKIE["username"])) {
+    $username = SQLite3::escapeString($_COOKIE["username"]);
+    $password = SQLite3::escapeString($_COOKIE["password"]);
+    $query = "SELECT * FROM users WHERE name='$username' AND password='$password'";
+    $result = $con->query($query);
+    $row = $result->fetchArray(SQLITE3_ASSOC);
+    if ($row) {
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>My Blog</title>
+    <title>My Security Blog</title>
     <link rel="stylesheet" href="blog.css">
 </head>
 <body>
 <div id="mainCard">
 
-    <h1>My Blog</h1>
+    <h1>My Security Blog</h1>
 
-    <a href="blogPost1.html">
+    <a href="blogPost1.php">
         <div class="blogPostPreview">
             <div class="paddedBox">
                 <h2>Title here</h2>
@@ -20,7 +32,7 @@
         </div>
     </a>
 
-    <a href="blogPost1.html">
+    <a href="blogPost2.php">
         <div class="blogPostPreview">
             <div class="paddedBox">
                 <h2>Title here</h2>
@@ -30,7 +42,7 @@
         </div>
     </a>
 
-    <a href="blogPost1.html">
+    <a href="blogPost3.php">
         <div class="blogPostPreview">
             <div class="paddedBox">
                 <h2>Title here</h2>
@@ -43,3 +55,7 @@
 
 </body>
 </html>
+        <?php
+    } else header("Location: index.php?error=1");
+} else header("Location: index.php?error=3");
+?>

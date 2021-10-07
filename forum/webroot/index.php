@@ -15,6 +15,9 @@ if (isset($_GET["error"])) {
         case 1:
             $errorMessage = "Wrong credentials!";
             break;
+        case 3:
+            $errorMessage = "You don't have permission to see that content!";
+            break;
     }
     ?>
 
